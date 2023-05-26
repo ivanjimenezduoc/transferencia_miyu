@@ -48,7 +48,30 @@
         <p>Correo: ivan_jimenez@live.cl</p>
         <button id="copyButton">Copiar Datos</button>
     </div>
+<script>
+    const copyButton = document.getElementById('copyButton');
+    copyButton.addEventListener('click', copyToClipboard);
 
+    function copyToClipboard() {
+        const dataToCopy = `
+        Nombre: Ivan Jimenez
+        Rut: 16.043.834-7
+        Banco: Banco Credito e Inversiones
+        Cuenta Corriente
+        Numero: 000000
+        Correo: ivan_jimenez@live.cl
+        `;
+
+        const textarea = document.createElement('textarea');
+        textarea.value = dataToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        alert('Los datos se han copiado al portapapeles');
+    }
+</script>
     
 </body>
 </html>
