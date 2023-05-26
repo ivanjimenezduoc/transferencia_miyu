@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miyu Pet Accesorios</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/vector-gratis/diseno-patron-pow-colorido-lindo-gatito_1017-14710.jpg?w=740&t=st=1685070154~exp=1685070754~hmac=f31493a59c8f1e5c2b4ab637b7c47fe3375fc82f4a1295223ce7157b01f8d74f");
+            background-repeat: repeat;
+        }
+        
+        .card {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            background-color: #8a5eff;
+            text-align: center;
+            color: white;
+        }
+        
+        img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        button {
+            background-color: #4b2ab8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://miyu.cl/wp-content/uploads/2020/07/cropped-banner.jpg" alt="Banner">
+    <div class="card">
+        <h2>Tienda de Animales</h2>
+        <h3>Datos Personales</h3>
+        <p>Nombre: Ivan Jimenez</p>
+        <p>Rut: 16.043.834-7</p>
+        <p>Banco: Banco Credito e Inversiones</p>
+        <p>Cuenta Corriente</p>
+        <p>Numero: 000000</p>
+        <p>Correo: ivan_jimenez@live.cl</p>
+        <button id="copyButton">Copiar Datos</button>
+    </div>
+
+    <script>
+        const copyButton = document.getElementById('copyButton');
+        copyButton.addEventListener('click', () => {
+            const dataToCopy = `
+            Nombre: Ivan Jimenez
+            Rut: 16.043.834-7
+            Banco: Banco Credito e Inversiones
+            Cuenta Corriente
+            Numero: 000000
+            Correo: ivan_jimenez@live.cl
+            `;
+            navigator.clipboard.writeText(dataToCopy)
+                .then(() => {
+                    alert('Los datos se han copiado al portapapeles');
+                })
+                .catch((error) => {
+                    console.error('Error al copiar los datos', error);
+                });
+        });
+    </script>
+</body>
+</html>
